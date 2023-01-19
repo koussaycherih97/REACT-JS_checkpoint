@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import "./dis.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="dis">
+        <Form>
+          <fieldset disabled>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="disabledTextInput">
+                Disabled input
+              </Form.Label>
+              <Form.Control
+                id="disabledTextInput"
+                placeholder="Disabled input"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="disabledSelect">
+                Disabled select menu
+              </Form.Label>
+              <Form.Select id="disabledSelect">
+                <option>Disabled select</option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Check
+                type="checkbox"
+                id="disabledFieldsetCheck"
+                label="Can't check this"
+              />
+            </Form.Group>
+            <Button type="submit">Submit</Button>
+          </fieldset>
+        </Form>
+      </div>
     </div>
   );
 }
